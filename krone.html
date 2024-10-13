@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="logo">
+        <h1>Krone</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#home">Startseite</a></li>
+            <li><a href="#menu">Speisekarte</a></li>
+            <li><a href="#about">Über uns</a></li>
+            <li><a href="#reservations">Reservierungen</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Startseite mit Begrüßung -->
+<section id="home" class="hero">
+    <div class="hero-text">
+        <h2>Willkommen im Restaurant Krone</h2>
+        <p>Tradition trifft auf Genuss</p>
+    </div>
+</section>
+
+<!-- Speisekarte -->
+<section id="menu">
+    <h2>Unsere Speisekarte</h2>
+    <div class="menu-item">
+        <h3>Vorspeise: Carpaccio</h3>
+        <p>Dünn geschnittenes Rinderfilet mit Parmesan und Rucola – €12,90</p>
+    </div>
+    <div class="menu-item">
+        <h3>Hauptgericht: Lammkarree</h3>
+        <p>Lammkarree mit Rosmarinkartoffeln und Ratatouille – €24,50</p>
+    </div>
+    <div class="menu-item">
+        <h3>Dessert: Tiramisu</h3>
+        <p>Klassisches Tiramisu mit einem Hauch von Amaretto – €7,90</p>
+    </div>
+</section>
+
+<!-- Über uns -->
+<section id="about">
+    <h2>Über uns</h2>
+    <p>Das Restaurant Krone ist ein authentisches syrisches Restaurant, das seit einem Jahr unter der Leitung der Familie Koujar steht. Unsere Familie bringt die reiche und vielfältige Kultur Syriens auf den Teller – mit traditionellen Gerichten, die nach alten Familienrezepten zubereitet werden. Frische Zutaten, Liebe zum Detail und eine warme, familiäre Atmosphäre sind uns besonders wichtig.
+       Besuchen Sie uns und erleben Sie die Aromen Syriens in einer einladenden Umgebung.</p>
+</section>
+
+<!-- Reservierungsformular -->
+<section id="reservations">
+    <h2>Reservierungen</h2>
+    <form id="reservation-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">E-Mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="date">Datum:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time">Uhrzeit:</label>
+        <input type="time" id="time" name="time" required>
+
+        <label for="guests">Anzahl der Gäste:</label>
+        <input type="number" id="guests" name="guests" min="1" max="10" required>
+
+        <button type="submit">Reservieren</button>
+    </form>
+
+    <!-- Bestätigung -->
+    <div id="reservation-result"></div>
+</section>
+
+<!-- Kontakt -->
+<section id="contact">
+    <h2>Kontakt</h2>
+    <p>Adresse: Hauptstraße 123, 12345 Musterstadt</p>
+    <p>Telefon: 0123 456789</p>
+    <p>E-Mail: info@restaurant-krone.de</p>
+</section>
+
+<footer>
+    <p>&copy; 2024 Restaurant Krone. Alle Rechte vorbehalten.</p>
+</footer>
+
+<!-- Einbindung der JavaScript-Datei -->
+<script src="krone.js"></script>
+</body>
+<style>
+/* Allgemeine Stile */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #d7d552;
+    color: #333;
+}
+
+header {
+    background-color: #d4af37; /* Goldfarbener Hintergrund */
+    color: rgb(115, 50, 50);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-family: 'Georgia', serif; /* Elegantere Schriftart für das Logo */
+    color: #943939;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+nav ul li a:hover {
+    color: #ff4500; /* Orange Akzent bei Hover */
+}
+
+/* Hero Section mit Hintergrundbild */
+.hero {
+    background-image: url('kron.jpg'); /* Bild für Hero */
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4); /* Dunkler Filter */
+}
+
+.hero-text {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.hero-text h2 {
+    font-size: 3em;
+    font-family: 'Georgia', serif;
+}
+
+.hero-text p {
+    font-size: 1.5em;
+    color: #ff4500; /* Orange Akzent */
+}
+
+/* Sektionen */
+section {
+    padding: 60px;
+    text-align: center;
+    background-color: #fff;
+    margin-bottom: 30px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Speisekarte */
+#menu .menu-item {
+    background-color: white;
+    margin: 20px auto;
+    padding: 30px;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #d4af37;
+    border-radius: 10px;
+    text-align: left;
+}
+
+#menu h2 {
+    font-size: 2.5em;
+    color: #d4af37; /* Goldene Akzente */
+    margin-bottom: 20px;
+}
+
+.menu-item h3 {
+    color: #d4af37; /* Gold für Menü-Überschriften */
+}
+
+.menu-item p {
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Über uns */
+#about {
+    background-image: url('krone.jpg'); /* Bild für die "Über uns"-Sektion */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+#about::before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.6); /* Dunkler Filter über dem Bild */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#about h2 {
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    font-size: 3em;
+}
+
+#about p {
+    position: relative;
+    z-index: 1;
+    font-size: 1.5em;
+    max-width: 800px;
+    margin: 20px auto;
+    color: #f0e68c; /* Hellere goldene Akzente für den Text */
+}
+
+/* Reservierungen */
+#reservations form {
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 2px solid #ff4500;
+}
+
+#reservations h2 {
+    font-size: 2.5em;
+    color: #ff4500;
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin: 15px 0 5px;
+    font-size: 1.2em;
+}
+
+form input, form button {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+form input:focus {
+    border-color: #ff4500;
+}
+
+form button {
+    background-color: #ff4500; /* Orangefarbener Button */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: #e63900;
+}
+
+#reservation-result {
+    margin-top: 20px;
+    font-size: 1.3em;
+    color: #28a745; /* Grüne Farbe für Bestätigungsnachricht */
+}
+
+/* Kontaktbereich */
+#contact {
+    background-color: #d4af37;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 1.3em;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+</style>
+</html>
